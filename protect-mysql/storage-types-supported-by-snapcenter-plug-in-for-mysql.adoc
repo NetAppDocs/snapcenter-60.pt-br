@@ -1,0 +1,47 @@
+---
+permalink: protect-mysql/storage-types-supported-by-snapcenter-plug-in-for-mysql.html 
+sidebar: sidebar 
+keywords: storage types, 
+summary: 'O SnapCenter oferece suporte a uma ampla variedade de tipos de armazenamento em máquinas físicas e máquinas virtuais (VMs). Você deve verificar o suporte para o seu tipo de armazenamento antes de instalar o plug-in SnapCenter para MySQL.' 
+---
+= Tipos de armazenamento suportados pelo plug-in SnapCenter para MySQL
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O SnapCenter oferece suporte a uma ampla variedade de tipos de armazenamento em máquinas físicas e máquinas virtuais (VMs). Você deve verificar o suporte para o seu tipo de armazenamento antes de instalar o plug-in SnapCenter para MySQL.
+
+|===
+| Máquina | Tipo de armazenamento 
+
+
+ a| 
+Servidor físico
+ a| 
+* LUNs conectados a FC
+* LUNs ligados ao iSCSI
+* Volumes conectados a NFS
+
+
+
+
+ a| 
+VMware ESXi
+ a| 
+* LUNs RDM conetados por um FC ou iSCSI ESXi HAScanning de adaptadores de barramento de host (HBAs) pode levar muito tempo para ser concluído porque o SnapCenter verifica todos os adaptadores de barramento de host presentes no host.
++
+Você pode editar o arquivo *LinuxConfig.pm* localizado em _/opt/NetApp/SnapCenter/spl/plugins/scu/scucore/modules/SCU/Config_ para definir o valor do parâmetro *SCSI_HOSTS_OPTIMIZED_RESCAN* para 1 para reexaminar somente os HBA listados em HBA_DRIVER_NAMES.
+
+* ISCSI LUNs ligados diretamente ao sistema convidado pelo iniciador iSCSI
+* VMDKs em armazenamentos de dados NFS
+* VMDKs no VMFS criado
+* Volumes NFS conectados diretamente ao sistema convidado
+* Armazenamentos de dados da VVol em NFS e SAN
++
+O armazenamento de dados da VVol só pode ser provisionado com as Ferramentas do ONTAP para o VMware vSphere.
+
+
+
+|===
