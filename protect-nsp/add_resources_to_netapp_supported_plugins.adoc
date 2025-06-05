@@ -197,5 +197,6 @@ Definições de recursos:
 * ORA_TEMP especifica o diretório para arquivos temporários.
 * Oracle_HOME especifica o diretório onde o software Oracle está instalado.
 * ARCHIVE_LOG_ONLY especifica se você deve fazer o backup dos logs do arquivo ou não.
-* O Oracle_backup_MODE especifica se deve executar o backup on-line ou off-line.
+* ORACLE_BACKUPMODE especifica se o backup deve ser realizado online ou offline.
+* ORACLE_EXPORT_PARAMETERS especifica se as variáveis de ambiente definidas acima devem ser reexportadas durante a execução de _/bin/su <usuário executando sqlplus> -c sqlplus /nolog <cmd>_. Isso normalmente ocorre quando o usuário que está executando o sqlplus não definiu todas as variáveis de ambiente necessárias para se conectar ao banco de dados usando _connect / as sysdba_.
 
