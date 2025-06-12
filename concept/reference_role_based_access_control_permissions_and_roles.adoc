@@ -63,10 +63,6 @@ O SnapCenter fornece as seguintes permissões:
 * Painel de instrumentos
 * Relatórios
 * Restaurar
-+
-** Restauração completa de volume (somente para plug-ins personalizados)
-
-
 * Recurso
 +
 Os plug-in Privileges são necessários do administrador para que não administradores realizem operações de descoberta de recursos.
